@@ -1,0 +1,32 @@
+
+public class Test {
+	public static void main(String[] args) {
+		Plate<? super GApple> ii = new Plate<Apple>();
+	}
+	
+	static public class Fruit{
+		static Apple a;
+		static void call() {
+			
+		}
+	}
+	
+	
+	static public class Apple extends Fruit{
+		
+	}
+	
+	static public class GApple extends Apple{
+		
+	}
+	
+	static public class Plate<T>{
+		public T item;
+		public void setItem(T tmp){
+			item = tmp;
+		}
+		public T getItem() {
+			return item;
+		}
+	}
+}

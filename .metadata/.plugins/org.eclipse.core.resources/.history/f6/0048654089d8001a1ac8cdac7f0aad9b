@@ -1,0 +1,60 @@
+
+public class Test {
+	public static void main(String[] args) {
+//		Plate<? super GApple> ii = new Plate<Apple>();
+		int mod_shit = 30;
+		int mask = 0x3 << mod_shit;
+		System.out.println("mask = " + Integer.toBinaryString(mask));
+			
+//		String a = "abc";
+//		String b = new String("abc");
+//		String c = a + b;
+//		String d = a + b;
+//		System.out.println(a == b);
+	}
+	
+	public static int parseInt(String s) {
+		if(s == null || s.length() ==0) {
+			throw new NumberFormatException();
+		}
+		boolean negative = false;
+		long limit = Integer.MAX_VALUE;
+		int index = 0;
+		int result = 0;
+		if(s.charAt(0)<'0' || s.charAt(0)>'9') {
+			if(s.charAt(0) == '-') {
+				negative = true;
+				limit = -Integer.MIN_VALUE;
+			}else if(s.charAt(0) == '+') {
+				negative = false;
+			}else {
+				throw new NumberFormatException();
+			}
+			index ++;
+		}
+		while(index < s.length()){
+			
+		}
+		
+		return 0;
+	}
+	
+	public class Fruit{
+	
+		
+			
+		
+	}
+	
+
+	
+	static public class Plate<T>{
+		public T item;
+		public void setItem(T tmp){
+			item = tmp;
+		}
+		public T getItem() {
+			return item;
+		}
+	}
+}

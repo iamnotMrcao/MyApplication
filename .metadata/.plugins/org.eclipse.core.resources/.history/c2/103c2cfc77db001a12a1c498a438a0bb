@@ -1,0 +1,23 @@
+
+public class CGenericClass {
+
+	private static CGenericClass instance;
+	
+	private CGenericClass() {
+		
+	}
+	
+	public static CGenericClass getInstance() {
+		
+		if(instance == null) {
+			synchronized (CGenericClass.class) {
+				if(instance == null) {
+					instance = new CGenericClass();
+					return instance;
+				}
+			}
+		}
+		
+		return instance;
+	}
+}

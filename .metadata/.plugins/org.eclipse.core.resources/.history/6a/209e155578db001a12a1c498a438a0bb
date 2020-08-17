@@ -1,0 +1,33 @@
+
+public class CGenericClass {
+
+//	private volatile static CGenericClass instance;
+//	
+//	private CGenericClass() {
+//		
+//	}
+//	
+//	public static CGenericClass getInstance() {
+//		
+//		if(instance == null) {
+//			synchronized (CGenericClass.class) {
+//				if(instance == null) {
+//					instance = new CGenericClass();
+//				}
+//			}
+//		}
+//		
+//		return instance;
+//	}
+	
+	
+	public static CGenericClass getInstance() {
+		
+		return null;
+	}
+	
+	static class INNER{
+		public static CGenericClass instance = new CGenericClass();
+	}
+	
+}

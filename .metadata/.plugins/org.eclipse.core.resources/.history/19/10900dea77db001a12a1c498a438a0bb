@@ -1,0 +1,21 @@
+
+public class CGenericClass {
+
+	static Object getLock = new Object();
+	private static CGenericClass instance;
+	
+	private CGenericClass() {
+		
+	}
+	
+	public static CGenericClass getInstance() {
+		
+		if(instance == null) {
+			synchronized (getLock) {
+				
+			}
+		}
+		
+		return instance;
+	}
+}

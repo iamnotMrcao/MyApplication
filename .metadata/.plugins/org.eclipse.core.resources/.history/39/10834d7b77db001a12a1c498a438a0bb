@@ -1,0 +1,15 @@
+
+public class CGenericClass {
+
+	private static CGenericClass instance = new CGenericClass();
+	
+	private CGenericClass() {
+		
+	}
+	
+	public static CGenericClass getInstance() {
+		
+		
+		return null;
+	}
+}

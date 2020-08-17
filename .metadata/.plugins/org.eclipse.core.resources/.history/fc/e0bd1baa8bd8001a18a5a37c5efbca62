@@ -1,0 +1,70 @@
+
+public class Test {
+	public static void main(String[] args) {
+//		Plate<? super GApple> ii = new Plate<Apple>();
+//		int mod_shit = 30;
+//		int mask = 0x3 << mod_shit;
+//		System.out.println("mask = " + Integer.toBinaryString(mask));
+			
+//		String a = "abc";
+//		String b = new String("abc");
+//		String c = a + b;
+//		String d = a + b;
+//		System.out.println(a == b);
+		System.out.println(parseInt("-2147483648"));
+
+	}
+	
+	public static int parseInt(String s) throws NumberFormatException {
+		if(s == null || s.length() == 0) {
+			throw new NumberFormatException("1");
+		}
+		boolean negative = false;
+		long limit = Integer.MAX_VALUE;
+		int index = 0;
+		int result = 0;
+		if(s.charAt(0)<'0' || s.charAt(0)>'9') {
+			if(s.charAt(0) == '-') {
+				negative = true;
+				limit = (long)Integer.MIN_VALUE * -1;
+			}else if(s.charAt(0) == '+') {
+				negative = false;
+			}else {
+				throw new NumberFormatException("2");
+			}
+			index ++;
+		}
+		while(index < s.length()){
+			int value = s.charAt(index)-'0';
+			if(value < 0 || value >9) {
+				throw new NumberFormatException("3");
+			}
+			if(result*10 > limit - value) {
+				throw new NumberFormatException("4");
+			}
+			result = result * 10 + value;
+			index++;
+		}
+		
+		return negative?-result:result;
+	}
+	
+	public class Fruit{
+	
+		
+			
+		
+	}
+	
+
+	
+	static public class Plate<T>{
+		public T item;
+		public void setItem(T tmp){
+			item = tmp;
+		}
+		public T getItem() {
+			return item;
+		}
+	}
+}
